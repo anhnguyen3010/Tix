@@ -1,0 +1,6 @@
+.link-dropdown{
+    @include link($color-black-0, $fs-1);
+    &:hover{
+        @include link($color-black-0, $fs-1);   
+    }
+}

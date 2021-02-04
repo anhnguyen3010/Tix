@@ -1,0 +1,14 @@
+
+@mixin ageType($color, $bg-color, $fs, $bd-radius, $pdY, $pdX){
+    color:$color;
+    background-color: $bg-color;
+    font-size: $fs;
+    border-radius: $bd-radius;
+    padding: $pdY $pdX;
+}
+@mixin link($color,$fs){
+    display:block;
+    text-decoration: none;
+    color:$color;
+    font-size: $fs;
+}
