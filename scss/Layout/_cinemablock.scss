@@ -1,0 +1,186 @@
+.cinema {
+  display: flex;
+  position:relative;
+  flex-wrap: wrap;
+  padding-top:120px;
+  padding-bottom:40px;
+  max-width: 940px;
+  .cinema__img--overlay{
+    display: block;
+    position: absolute !important;
+    left:0;
+    top: 0;
+    // transform: translateX(-50%);
+    width:940px;
+    height:120px;
+    // padding-top:60px;
+    z-index: -1000;
+
+  }
+ 
+  .cinema__list {
+    display: flex;
+    flex-direction: column;
+    min-height: 705px;
+    width: 92px;
+    float: left;
+    border: 1px solid #ebebec;
+    .nav-item {
+      .nav-link {
+        @include size(90px);
+        padding: 20px;
+        border: none;
+        position: relative;
+        &.active {
+          img {
+            opacity: 1;
+          }
+        }
+        &:after {
+          content: "";
+          width: calc(100% - 40px);
+          height: 1px;
+          background-color: rgba(238, 238, 238, 0.88);
+          position: absolute;
+          left: 50%;
+          bottom: 0;
+          transform: translate(-50%, -50%);
+        }
+        img {
+          opacity: 0.5;
+          display: block;
+          @include size(50px);
+          
+        }
+      }
+    }
+  }
+  .cinema__content {
+    display: flex;
+    min-height: 705px;
+    border: 1px solid #ebebec;
+    border-left: none;
+    width: calc(100% - 92px);
+    overflow-y: hidden;
+    .cinema__showtimes {
+      width: 100%;
+      position: relative;
+      margin: 0;
+      .tab-content {
+        width: 100%;
+        .tab-pane {
+          width: 100%;
+          border: none;
+          p {
+            @include styleText($fs-1 + 1,$fw-1, $color-black-1);
+            margin-top: 25px;
+            text-align: center;
+          }
+        }
+      }
+    }
+    .cinema__item {
+      display: none;
+      position: relative;
+      min-width: 30%;
+      min-height: 705px;
+      border-right: 1px solid #ebebec;
+      &.active {
+        display: block;
+      }
+      .nav {
+        display: flex;
+        flex-direction: column;
+        border: none;
+        .nav-item {
+          width: 100%;
+          position:relative;
+          &:after {
+            content: "";
+            display: block;
+            
+            @include position(50%,100%,-50%);
+            width: calc(100% - 40px);
+            height:1px;
+            background-color:  rgba(238, 238, 238, 0.88);
+          }
+          .cinema__item--content {
+            border: none;
+            display: flex;
+            margin: 0;
+            opacity: 0.5;
+            color: #000;
+            overflow: hidden;
+            padding:15px 15px 15px 20px;
+            
+            &.active, &:hover {
+              opacity: 1;
+            }
+            .item__img {
+              display: block;
+              @include size(50px);
+            }
+
+            .item__text {
+              width: 80%;
+              padding-left: 10px;
+
+              .item__text--title {
+                line-height: 1.4;
+                margin: 0; 
+              }
+              .item__text--address {
+                margin: 0;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                line-height: 1.4;
+                color: $color-gray-2;
+              }
+              .item__text--detail {
+                margin: 0;
+                line-height: 1.4;
+                color: $color-red-1;
+              }
+            }
+          }
+          
+        }
+      }
+    }
+  }
+}
+@include reponsive('medium'){
+  .cinema{
+    .cinema__content{
+      .cinema__item{
+        width:220px;
+        .nav{
+          .nav-item{
+            .cinema__item--content{
+              .item__img{
+                width:0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@include reponsive('small'){
+  .cinema{
+    .cinema__content{
+      .cinema__item{
+        width:180px;
+        
+      }
+    }
+  }
+}
+@media screen and (max-width:480px){
+  .cinema{
+    display: none;
+  }
+}
+

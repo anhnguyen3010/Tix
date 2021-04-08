@@ -133,3 +133,10 @@
     }
   }
 }
+@include reponsive('large'){
+  .tix-carousel{
+    .tix-hometool{
+    display:none;
+  }
+}
+}

@@ -8,15 +8,16 @@
 @import './Base/reset';
 @import './Base/customize';
 // Components
+@import './Components/title';
 @import './Components/button';
 @import './Components/link';
 
 // Layouts
 @import './Layout/carousel';
-@import './Layout/hometool';
 @import './Layout/cinemablock';
 @import './Layout/appblock';
 // Pages
+@import './Page/login';
 
 // Themes
 
