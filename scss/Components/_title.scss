@@ -1,0 +1,18 @@
+.bhd--title{
+    @include cinemaTitle($color-green-1);
+}
+.cns--title{
+    @include cinemaTitle(#df0d7a);
+}
+.ddc--title{
+    @include cinemaTitle(#9c9c9c);
+}
+.mega--title{
+    @include cinemaTitle(#e5a813);
+}
+.dcine--title{
+    @include cinemaTitle(#000);
+}
+.lotte--title{
+    @include cinemaTitle(#ca4137);
+}

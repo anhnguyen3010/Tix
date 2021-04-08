@@ -1,0 +1,38 @@
+
+@mixin ageType($color, $bg-color, $fs, $bd-radius, $pdY, $pdX){
+    color:$color;
+    background-color: $bg-color;
+    font-size: $fs;
+    border-radius: $bd-radius;
+    padding: $pdY $pdX;
+}
+@mixin size($width, $height:$width){
+    width:$width;
+    height: $height;
+}
+@mixin styleText($fs,$fw,$color){
+    font-size: $fs;
+    font-weight: $fw;
+    color:$color;
+}
+@mixin position($left, $top, $x, $y:$x){
+    position:absolute;
+    left:$left;
+    top: $top;
+    transform: translate($x,$y);
+}
+@mixin cinemaTitle($color){
+    color: $color;
+}
+
+//reponsive
+@mixin reponsive($screen){
+    @if(map-has-key($map: $breakpoints, $key: $screen)){
+        $value: map-get($map: $breakpoints , $key: $screen);
+        @media screen and (max-width:$value){
+            @content;
+        }
+    }@else{
+        @warn "Màn hình không tồn tại";
+    }
+}
